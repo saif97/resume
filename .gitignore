@@ -1,3 +1,19 @@
-node_modules/
-resume.pdf
-package-lock.json
+# Build artifacts
+build/
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
