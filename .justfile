@@ -2,6 +2,17 @@
 default:
     @just --list
 
-# Sample command - replace with your own
-open-pdf:
+# Compile resume to PDF in build directory
+build:
+    @echo "📄 Compiling resume..."
+    @python skills/resume-optimizer/scripts/compile_latex.py Saif_Hakeam_Resume.tex build/
+
+# Open compiled PDF
+open:
     @open build/Saif_Hakeam_Resume.pdf
+
+# Clean build artifacts
+clean:
+    @echo "🧹 Cleaning build directory..."
+    @rm -rf build/
+    @echo "✅ Build directory cleaned"

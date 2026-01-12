@@ -19,6 +19,20 @@ Act as a staff technical recruiter and engineering manager when helping with res
 - Prioritize high-impact changes first
 - Explain *why* changes matter for the hiring process
 
+## Visual Style & Verification Standards
+
+**Mandatory Output Style:**
+All generated PDFs must replicate the clean, standard look of **Google Docs** or **MS Word**, avoiding typical "LaTeX-y" visual artifacts.
+- **Font:** Use standard Sans Serif (e.g., Computer Modern Sans Serif `\sfdefault`, Helvetica, or Arial) or Times New Roman.
+- **Links:** Must be **blue text** (`#1155cc`) with a matching **blue underline**. Do NOT use boxes around links.
+- **Layout:** Standard margins (0.5in - 1.0in), clean section headers, no complex tables or heavy design elements.
+
+**Verification Mandate:**
+After every compilation, you **MUST** verify the output quality:
+1.  **Visual Simulation:** Verify the code produces the mandated style (font, links, layout).
+2.  **Content Inspection:** Use the `read_file` tool to read the compiled PDF content (text extraction) to ensure all text is present, correctly ordered, and formatted as expected.
+3.  **Well-Formedness:** Confirm the PDF exists, has a valid size, and contains the expected content sections.
+
 ## Workflow: Resume Review & Optimization
 
 ### Step 1: Initial Assessment
@@ -115,6 +129,7 @@ When working with LaTeX resumes:
 - Use `scripts/compile_latex.py` to generate PDF when requested
 - Verify compilation success and handle errors
 - Provide compiled PDF to user for review
+- **VERIFY OUTPUT:** Immediately after compilation, use `read_file` on the generated PDF to confirm text extraction works and content is correct.
 
 ## Quick Reference Commands
 
@@ -166,7 +181,7 @@ python scripts/compile_latex.py path/to/resume.tex
 
 The script automatically:
 - **Tries local pdflatex first** (if TeX Live/MacTeX/BasicTeX installed)
-- **Falls back to Docker** if pdflatex not found (uses `blang/latex:ctanbasic` ~220MB)
+- **Falls back to Docker** if pdflatex not found (uses `blang/latex:ubuntu` ~2.6GB, full distribution)
 - Runs compilation twice to resolve references
 - Handles common compilation errors
 - Outputs PDF to specified directory (recommended: `build/`) or same directory as .tex file
@@ -176,8 +191,11 @@ The script automatically:
 
 **Requirements:**
 - **Option 1 (Preferred):** Local LaTeX distribution (TeX Live, MacTeX, BasicTeX)
-- **Option 2 (Fallback):** Docker installed (script auto-downloads `blang/latex:ctanbasic` image)
+- **Option 2 (Fallback):** Docker installed (script auto-downloads `blang/latex:ubuntu` image, ~2.6GB one-time download)
 - If neither available, user must install one
+
+**Docker Image Choice:**
+The full `ubuntu` image (~2.6GB) is used for maximum compatibility and includes all LaTeX packages, ensuring reliable compilation without package limitations.
 
 **Common Issues:**
 - Compilation errors → Check LaTeX syntax, missing braces, special characters

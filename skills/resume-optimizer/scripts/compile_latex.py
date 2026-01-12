@@ -33,8 +33,8 @@ def compile_with_docker(tex_file: Path, output_dir: Optional[Path] = None) -> bo
     tex_abs = tex_file.absolute()
     work_dir = tex_abs.parent
 
-    # Docker image to use (small, ~220MB)
-    docker_image = "blang/latex:ctanbasic"
+    # Docker image to use (full distribution, ~2.6GB but more reliable)
+    docker_image = "blang/latex:ubuntu"
 
     # Check if Docker is available
     if not check_command_exists("docker"):

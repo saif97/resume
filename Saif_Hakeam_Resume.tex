@@ -1,5 +1,5 @@
 %-------------------------
-% Saif Hakeam Resume
+% Saif M. Hakeam Resume
 % Matches original PDF layout exactly
 %-------------------------
 
@@ -8,22 +8,34 @@
 \usepackage{latexsym}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
+\usepackage[normalem]{ulem}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{
+    pdfborder={0 0 0},
+    colorlinks=false
+}
+
+% Standard Google/MS Docs blue color
+\definecolor{docblue}{RGB}{17, 85, 204}
+
+% Custom command for blue text with blue underline (using ulem for guaranteed underline)
+\newcommand{\myhref}[2]{\href{#1}{\color{docblue}\uline{#2}}}
+
 \usepackage[english]{babel}
 \usepackage{tabularx}
 
 % Page style - no headers/footers
 \pagestyle{empty}
 
-% Adjust margins - aggressive for single page
+% Adjust margins to match original
 \setlength{\oddsidemargin}{-0.5in}
 \setlength{\evensidemargin}{-0.5in}
 \setlength{\textwidth}{7.0in}
-\setlength{\topmargin}{-0.8in}
-\setlength{\textheight}{10.8in}
+\setlength{\topmargin}{-0.75in}
+\setlength{\textheight}{10.7in}
 \setlength{\headheight}{0pt}
 \setlength{\headsep}{0pt}
-\setlength{\footskip}{0pt}
+\setlength{\footskip}{10pt}
 
 \urlstyle{same}
 
@@ -32,12 +44,15 @@
 \setlength{\tabcolsep}{0in}
 \setlength{\parindent}{0pt}
 
-% Section formatting
+% Use Sans Serif font globally
+\renewcommand{\familydefault}{\sfdefault}
+
+% Section formatting - cleaner and thinner rule
 \renewcommand{\section}[1]{
+  \vspace{5pt}
+  {\large\bfseries #1}
   \vspace{2pt}
-  {\large\bfseries\scshape\raggedright #1}
-  \vspace{0pt}
-  \par\noindent\rule{\textwidth}{0.4pt}
+  \par\noindent\rule{\textwidth}{0.5pt}
   \vspace{2pt}
 }
 
@@ -48,29 +63,28 @@
 
 %----------HEADING----------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r}
-  \href{mailto:saif.hakeam97@gmail.com}{saif.hakeam97@gmail.com} & \textbf{\Huge \scshape Saif Hakeam} & \href{https://github.com/saifhakeam}{GitHub} \\
-  +(971) 56 322 5389 & & \href{https://linkedin.com/in/saif-hakeam}{LinkedIn} \\
+  \myhref{mailto:saif.hakeam97@gmail.com}{saif.hakeam97@gmail.com} & \textbf{\Huge \scshape Saif M. Hakeam} & \myhref{https://github.com/saifhakeam}{GitHub} \\
+  +(971) 56 322 5389 & & \myhref{https://linkedin.com/in/saif-hakeam}{LinkedIn} \\
   Abu Dhabi, UAE & & \\
 \end{tabular*}
 
 %-----------SUMMARY-----------
 \section{Summary}
-\vspace{-2pt}
-\textbf{Software Engineer} with \textbf{4 years} of experience working in the fields of \textbf{Security}, \textbf{FinTech}, \textbf{Machine Learning}, mobile \textbf{SDKs \& cross-platform} plugins. I have a proven track record of building and integrating \textbf{mission-critical} SDKs used by \textbf{Banks}. \textbf{3x AWS} certified with strong \textbf{backend} experience.
+
+\textbf{Software Engineer} with \textbf{4 years} of experience working in the fields of \textbf{Security, FinTech, Machine Learning}, mobile \textbf{SDKs \& cross-platform} plugins. I have a proven track record of building and integrating \textbf{mission-critical} SDKs used by \textbf{Banks. 3x AWS} certified with strong \textbf{backend} experience.
 
 %-----------EXPERIENCE-----------
 \section{Professional Experience}
-\vspace{-2pt}
 
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{Software Engineer - Mobile SDK} & Aug 2022 - Present \\
-  \textit{Callsign Technologies} & \textit{Abu Dhabi, UAE} \\
+  \textit{\myhref{https://www.callsign.com}{Callsign Technologies}} & \textit{Abu Dhabi, UAE} \\
 \end{tabular*}
 
-\vspace{0pt}
+\vspace{1pt}
 \begin{itemize}
-  \setlength{\itemsep}{0pt}
+  \setlength{\itemsep}{1pt}
   \setlength{\parsep}{0pt}
   \setlength{\topsep}{0pt}
   \item Worked in a team of 3 to build \textbf{Cordova plugin} for the \textbf{Callsign SDK}, enabling a major Irish credit union to migrate to a new \textbf{SaaS} platform and reduce operational \textbf{costs by over \$250,000 annually}.
@@ -79,16 +93,16 @@
   \item Built an end-to-end \textbf{CI/CD} for \textbf{Cordova, React-Native, and Flutter} applications, reducing the release cycle from \textbf{a week to less than a day}.
 \end{itemize}
 
-\vspace{1pt}
+\vspace{2pt}
 \noindent
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{Technical Founder} & Oct 2021 - Jan 2024 \\
   \textit{Injaz} & \textit{Mosul, Iraq} \\
 \end{tabular*}
 
-\vspace{0pt}
+\vspace{1pt}
 \begin{itemize}
-  \setlength{\itemsep}{0pt}
+  \setlength{\itemsep}{1pt}
   \setlength{\parsep}{0pt}
   \setlength{\topsep}{0pt}
   \item Single-handedly built accounting platform managing over \textbf{\$200K annually} for a leading construction contractor.
@@ -101,18 +115,15 @@
 
 %-----------EDUCATION-----------
 \section{Education}
-\vspace{-2pt}
+
 \noindent
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{AWS Certified Solutions Architect and Developer -- Associate} \href{https://www.credly.com/badges/architect}{Architect} \href{https://www.credly.com/badges/developer}{Developer} \href{https://www.credly.com/badges/practitioner}{Practitioner} & Feb 2025 \\[0pt]
-  \textbf{The American University of Iraq - Sulaimani (AUIS)} B.S. in IT & Sep 2017 - Jul 2021 \\[0pt]
-  \textbf{Stanford Online:} Algorithms Design and Analysis Part I \& II \hspace{1em} \href{https://verify.certificate.link}{Verified Certificate} & Sep 2020 \\[0pt]
-  \textbf{Stanford Online:} Machine Learning \hspace{1em} \href{https://verify.certificate.link}{Verified Certificate} & Dec 2020 \\
-\end{tabular*}
+\textbf{AWS Certified Solutions Architect and Developer -- Associate} \myhref{https://www.credly.com/badges/your-architect-badge-id}{Architect} \myhref{https://www.credly.com/badges/your-developer-badge-id}{Developer} \myhref{https://www.credly.com/badges/your-practitioner-badge-id}{Practitioner} \hfill Feb 2025 \\[0pt]
+\textbf{The American University of Iraq - Sulaimani (AUIS)} B.S. in IT \hfill Sep 2017 - Jul 2021 \\[0pt]
+\textbf{Stanford Online:} Algorithms Design and Analysis Part I \& II \hspace{1em} \myhref{https://coursera.org/verify/your-certificate-id}{Verified Certificate} \hfill Sep 2020 \\[0pt]
+\textbf{Stanford Online:} Machine Learning \hspace{1em} \myhref{https://coursera.org/verify/your-certificate-id}{Verified Certificate} \hfill Dec 2020
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
-
 \vspace{-2pt}
 \noindent
 \textbf{Programming Languages:} Experienced in Dart, Python, Java, JavaScript. Familiar with Kotlin, Swift, Objective-C, Go. \\[0pt]
