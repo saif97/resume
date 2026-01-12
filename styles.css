@@ -1,0 +1,189 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+    color: #000;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px 60px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-align: center;
+    font-weight: 700;
+}
+
+.contact-info {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.social-links {
+    text-align: right;
+}
+
+.social-links a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    margin-bottom: 1.5em;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #000;
+    padding-bottom: 2px;
+    margin-bottom: 12px;
+}
+
+/* Job entries */
+.job {
+    margin-bottom: 1.2em;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5em;
+}
+
+.job h3 {
+    margin: 0 0 2px 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.company {
+    margin: 0;
+    font-style: italic;
+}
+
+.company a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.job-date {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.job ul {
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.job-header > div:last-child {
+    text-align: right;
+}
+
+.company {
+    margin: 2px 0;
+    font-style: italic;
+}
+
+/* Education */
+.education-item {
+    margin-bottom: 8px;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.education-item a {
+    font-size: 0.85em;
+    margin-left: 8px;
+}
+
+/* Skills */
+.skills p {
+    margin: 0.5em 0;
+}
+
+/* Links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Print-specific styles */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0.5in;
+    }
+
+    a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+    /* Prevent page breaks inside elements */
+    .job, .education-item {
+        page-break-inside: avoid;
+    }
+
+    h2 {
+        page-break-after: avoid;
+    }
+
+    /* Ensure links are visible in print */
+    a[href]:after {
+        content: none;
+    }
+}

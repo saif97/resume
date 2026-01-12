@@ -1,0 +1,13 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "Saif Hakeam's Resume",
+  "scripts": {
+    "preview": "live-server --port=8080 --wait=200 --open=resume.html",
+    "build": "node build.js",
+    "dev": "npm run preview"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}
