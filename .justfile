@@ -5,7 +5,7 @@ default:
 # Compile resume to PDF in build directory
 build:
     @echo "📄 Compiling resume..."
-    @python skills/resume-optimizer/scripts/compile_latex.py Saif_Hakeam_Resume.tex build/
+    @python scripts/compile_latex.py Saif_Hakeam_Resume.tex build/
 
 # Open compiled PDF
 open:
