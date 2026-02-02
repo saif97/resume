@@ -2,10 +2,9 @@
 default:
     @just --list
 
-# Compile resume to PDF in build directory
+# Compile resume to PDF in build directory (uses Docker if pdflatex not installed)
 build:
-    @echo "📄 Compiling resume..."
-    @python scripts/compile_latex.py Saif_Hakeam_Resume.tex build/
+    @./scripts/build.sh Saif_Hakeam_Resume.tex
 
 # Open compiled PDF
 open:
@@ -13,6 +12,4 @@ open:
 
 # Clean build artifacts
 clean:
-    @echo "🧹 Cleaning build directory..."
     @rm -rf build/
-    @echo "✅ Build directory cleaned"
