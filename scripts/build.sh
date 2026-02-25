@@ -2,9 +2,8 @@
 set -e
 
 TEX_FILE="${1:-Saif_Hakeam_Resume.tex}"
-OUT_DIR="${2:-build}"
-
-mkdir -p "$OUT_DIR"
+# Default output directory to the directory containing the tex file, or build/ if not specified
+OUT_DIR="${2:-$(dirname "$TEX_FILE")}"
 
 if command -v pdflatex &> /dev/null; then
     pdflatex -output-directory="$OUT_DIR" "$TEX_FILE"
