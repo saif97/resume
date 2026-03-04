@@ -29,14 +29,6 @@ You are a **Staff Technical Hiring Manager** with 15+ years of experience hiring
 
 LaTeX resume template with AI-assisted optimization. Fork this repo, replace content with your own experience, and use the reference docs to craft strong bullet points.
 
-## Build Commands
-
-```bash
-just build    # Compile resume to PDF (local pdflatex or Docker fallback)
-just open     # Open compiled PDF
-just clean    # Clean build artifacts
-```
-
 ## Key Files
 
 - `Saif_Hakeam_Resume.tex` - Main resume source (rename to your own)
@@ -44,22 +36,14 @@ just clean    # Clean build artifacts
 - `references/recruiter_guidelines.md` - Resume best practices and XYZ formula
 - `references/bullet_examples.md` - Before/after bullet point examples
 
-## LaTeX Conventions
+## Available Skills
 
-- `\myhref{url}{text}` for blue underlined links (Google Docs style)
-- Sans serif font (Lato via `\usepackage[default]{lato}`)
-- Custom `\section{}` with thin horizontal rule
-- `tabular*` for job title/date alignment
-- Tight `itemize` spacing (1pt itemsep)
+This project includes specialized skills for resume work:
 
-## Resume Optimization Guidelines
+- **latex-resume** - LaTeX conventions, build commands, resume-specific patterns
+- **visual-resume-analysis** - Build PDF, convert to images, analyze for visual issues
 
-When editing resume content:
-
-1. **XYZ Formula**: Accomplished [X] as measured by [Y] by doing [Z]
-2. **Avoid weak verbs**: "responsible for", "worked on", "helped" → use "Led", "Architected", "Reduced", "Increased"
-3. **Always include metrics**: scale (users, $), performance (latency, uptime), business impact (cost savings, revenue)
-4. **Consult reference docs** in `references/` for examples and detailed guidance
+Use the Skill tool to load these when working on relevant tasks.
 
 ## Workflow for AI-Assisted Resume Writing
 
@@ -85,7 +69,7 @@ When editing resume content:
 
 ## Compilation
 
-The build script (`scripts/compile_latex.py`) runs pdflatex twice to resolve references. It automatically falls back to Docker (`blang/latex:ubuntu`) if local pdflatex is unavailable.
+The build script (`scripts/build.sh`) runs pdflatex twice to resolve references. It automatically falls back to Docker (`blang/latex:ubuntu`) if local pdflatex is unavailable.
 
 Requires either:
 - Local pdflatex (TeX Live, MacTeX, BasicTeX)
