@@ -1,0 +1,2 @@
+- The Resume must stay in one page
+- No fancy words. We don't want to make it shout out it's AI built

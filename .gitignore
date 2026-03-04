@@ -19,4 +19,6 @@ Thumbs.db
 .idea/
 
 applications
+
 work_experience_details.md
+.claude/settings.local.json

@@ -54,7 +54,7 @@ Use the Skill tool to load these when working on relevant tasks.
 
 ## Critical Instructions for Claude
 
-**MUST FOLLOW** @user_preferences.md:
+**MUST FOLLOW** @user_preferences.md
 
 1. **Always update `work_experience_details.md`**: When the user shares work experience details or when you ask clarifying questions and receive answers, immediately update this file. This accumulates context over time for better resume writing.
    - **ONLY store actual work experience and projects** - never job posting details or application-specific tailoring notes
